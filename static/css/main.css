@@ -1,0 +1,17 @@
+* {
+    font-family: Montserrat, serif;
+}
+
+.img-medium {
+    width: 400px;
+    height: auto;
+}
+
+.hidden {
+    display: none;
+}
+
+#recordedAudioNormaal {
+    width: 400px;
+    height: auto;
+}
