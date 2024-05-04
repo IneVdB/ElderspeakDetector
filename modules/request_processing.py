@@ -69,7 +69,6 @@ def generate_filename(speech_type: str = "") -> str:
 
 def process_elder(elder_file: str, extract_text: bool) -> dict[str, Any]:
     """Process the request from the elderspeak page"""
-
     response_data: dict[str, Any] = {
         "pitch": calculate_pitch(elder_file, elderspeak=True, stream=False),
         "loudness": calculate_loudness(elder_file, elderspeak=True),
@@ -128,7 +127,7 @@ def process_audio(request):
 
     response_data = remove_noise_from_files(file_normal, file_elder)
     normal_data_filtered = process_normal(file_normal)
-    elder_data_filtered = process_elder(file_elder, extract_text)
+    elder_data_filtered = process_elder(file_elder, False)
 
     response_data["normal"].update(normal_data)
     response_data["elder"].update(elder_data)
