@@ -18,4 +18,5 @@ python.exe -m pip install -r requirements.txt
 
 REM Install Whisper
 python.exe -m pip install git+https://github.com/openai/whisper.git
+python.exe -m spacy download nl_core_news_lg
 )

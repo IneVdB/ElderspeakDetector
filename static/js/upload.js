@@ -10,15 +10,11 @@ function handlerFunction(stream) {
 
 
 const big_content = document.getElementById('big-content');
-const small_content = document.getElementById('small-content');
-const el_compare = document.getElementById('compare');
 const btn_process = document.getElementById('process');
 let el_loading = document.getElementById('loading');
 
 //elder elements
 const btn_record_elder = document.getElementById('btn-record-elder');
-const picture_elder = document.getElementById('picture_elder');
-const tekst_bij_foto_elder = document.getElementById('tekst_bij_foto_elder');
 const saved_elder = document.getElementById('saved_elder');
 let mp3_elder = document.getElementById('mp3_elder');
 let el_pitch_elder = document.getElementById('pitch_elder');

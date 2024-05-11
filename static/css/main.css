@@ -1,5 +1,5 @@
 * {
-    font-family: Montserrat, serif;
+    font-family: Arial, sans-serif;
 }
 
 .img-medium {
@@ -14,4 +14,22 @@
 #recordedAudioNormaal {
     width: 400px;
     height: auto;
+}
+
+.green-highlight, .pink-highlight, .yellow-highlight {
+    border-radius: 5px;
+    padding-left: 3px;
+ }
+
+.green-highlight {
+    background: #99FFCC; /* Default color, all browsers */
+}
+
+.pink-highlight {
+    background: #FFCCFF; /* Default color, all browsers */
+}
+
+
+.yellow-highlight {
+    background: #FFFFCC; /* Default color, all browsers */
 }
