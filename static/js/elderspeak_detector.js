@@ -46,11 +46,6 @@ function sendData(blob, kind) {
             console.log("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&")
             console.log(json)
             big_content.insertAdjacentHTML("beforeend", `<div><h4>Wat heb je gezegd?</h4><p>${json['speech_recognition']}</p></div>`);
-            big_content.insertAdjacentHTML("beforeend", `<div><h4>Verkleinwoorden:</h4><p>${json['verkleinwoorden']}</p></div>`);
-            big_content.insertAdjacentHTML("beforeend", `<div><h4>Herhalingen:</h4><p>${json['herhalingen']}</p></div>`);
-            big_content.insertAdjacentHTML("beforeend", `<div><h4>Collectieve voornaamwoorden:</h4><p>${json['collectieve_voornaamwoorden']}</p></div>`);
-            big_content.insertAdjacentHTML("beforeend", `<div><h4>Tussenwerpsels:</h4><p>${json['tussenwerpsels']}</p></div>`);
-
             small_content.insertAdjacentHTML("beforeend", `<div class="col-6"><h4>Stemfrequentie:</h4><p>${json['pitch']}</p></div>`);
             small_content.insertAdjacentHTML("beforeend", `<div class="col-6"><h4>Stemvolume:</h4><p>${json['loudness']}</p></div>`);
 
@@ -102,12 +97,7 @@ function stop_audio(innertext, text_after) {
 }
 
 btn_record.addEventListener('click', () => {
-    if (btn_record.innerText.toLowerCase() === "standaard audio opnemen") {
-        start_audio("Stop standaard opname")
-    } else if (btn_record.innerText.toLowerCase() === "stop standaard opname") {
-        stop_audio("stop standaard opname", "Elderspeak audio opnemen")
-        btn_record.disabled = true;
-    } else if (btn_record.innerText.toLowerCase() === "elderspeak audio opnemen") {
+    if (btn_record.innerText.toLowerCase() === "elderspeak audio opnemen") {
         start_audio("Stop elderspeak audio opname")
     } else if (btn_record.innerText.toLowerCase() === "stop elderspeak audio opname") {
         stop_audio("stop elderspeak audio opname", "Saved")

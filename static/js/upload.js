@@ -71,10 +71,6 @@ function sendData(blob_elder) {
 
         if (json['elder']['speech_recognition'] !== "Tekst-extractie is uitgeschakeld") {
             big_content.insertAdjacentHTML("beforeend", `<div><h4>Wat heb je gezegd?</h4><p>${json['elder']['speech_recognition']}</p></div>`);
-            big_content.insertAdjacentHTML("beforeend", `<div><h4>Verkleinwoorden:</h4><p>${json['elder']['verkleinwoorden']}</p></div>`);
-            big_content.insertAdjacentHTML("beforeend", `<div><h4>Herhalingen:</h4><p>${json['elder']['herhalingen']}</p></div>`);
-            big_content.insertAdjacentHTML("beforeend", `<div><h4>Collectieve voornaamwoorden:</h4><p>${json['elder']['collectieve_voornaamwoorden']}</p></div>`);
-            big_content.insertAdjacentHTML("beforeend", `<div><h4>Tussenwerpsels:</h4><p>${json['elder']['tussenwerpsels']}</p></div>`);
         }
 
     }).then(_ => {

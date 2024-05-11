@@ -32,10 +32,6 @@ function sendData(blob) {
         console.log("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&")
         console.log(json)
         big_content.insertAdjacentHTML("beforeend", `<div><h4>Wat heb je gezegd?</h4><p>${json['speech_recognition']}</p></div>`);
-        big_content.insertAdjacentHTML("beforeend", `<div><h4>Verkleinwoorden:</h4><p>${json['verkleinwoorden']}</p></div>`);
-        big_content.insertAdjacentHTML("beforeend", `<div><h4>Herhalingen:</h4><p>${json['herhalingen']}</p></div>`);
-        big_content.insertAdjacentHTML("beforeend", `<div><h4>Collectieve voornaamwoorden:</h4><p>${json['collectieve_voornaamwoorden']}</p></div>`);
-        big_content.insertAdjacentHTML("beforeend", `<div><h4>Tussenwerpsels:</h4><p>${json['tussenwerpsels']}</p></div>`);
 
         small_content.insertAdjacentHTML("beforeend", `<div class="col-6"><h4>Stemfrequentie:</h4><p>${json['pitch']}</p></div>`);
         small_content.insertAdjacentHTML("beforeend", `<div class="col-6"><h4>Stemvolume:</h4><p>${json['loudness']}</p></div>`);
