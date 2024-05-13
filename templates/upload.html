@@ -8,25 +8,9 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-            <h2>Gewone spraak uploaden of opnemen</h2>
-            <img src="{{ url_for('static', filename='img/jonge_mensen.jpg') }}" alt="jongeren foto"
-                class="img-fluid img-large" id="picture_normaal">
-            <br><span class="text-muted">(HOGENT, 2022)</span>
-            <p id="tekst_bij_foto_normaal">Spreek in hoe je tegen deze vrienden zou praten:</p>
-            <input type="file" id="mp3_normaal" name="mp3_normaal" accept="audio/mpeg, audio/mpeg3,.mp3">
-            <button type="button" id="btn-record-normal" class="btn btn-primary">standaard audio opnemen</button>
-            <p id="saved_normaal" class="text-primary hidden my-2">De audio is opgeslagen!</p>
-            <audio id=recordedAudioNormaal></audio>
-        </div>
-
-        <div class="col-md-6">
-            <h2>Elder spraak uploaden of opnemen</h2>
-            <img src="{{ url_for('static', filename='img/rusthuis.jpg') }}" alt="ouder foto"
-                class="img-fluid img-medium" id="picture_elder">
-            <br><span class="text-muted">(HOGENT, 2022)</span>
-            <p id="tekst_bij_foto">Spreek in hoe je tegen deze oude vrouw zou praten:</p>
+            <h2>Spraak uploaden of opnemen</h2>
             <input type="file" id="mp3_elder" name="mp3_elder" accept="audio/mpeg, audio/mpeg3,.mp3">
-            <button type="button" id="btn-record-elder" class="btn btn-primary">elder audio opnemen</button>
+            <button type="button" id="btn-record-elder" class="btn btn-primary">audio opnemen</button>
             <p id="saved_elder" class="text-primary hidden my-2">De audio is opgeslagen!</p>
             <audio id=recordedAudioElder></audio>
         </div>
@@ -42,14 +26,7 @@
     </div>
 
     <div class="row">
-        <div class="col-md-6">
-            <div>Pitch: <span id="pitch_norm"></span></div>
-            <div>Loudness: <span id="loudness_norm"></span></div>
-            <div>Pitch Filtered: <span id="pitch_norm_filtered"></span></div>
-            <div>Loudness Filtered: <span id="loudness_norm_filtered"></span></div>
-            <div>Stilte t.o.v totaal: <span id="sil_tot_norm"></span></div>
-            <div>Stilte percentage: <span id="sil_perc_norm"></span></div>
-        </div>
+
         <div class="col-md-6">
             <div>Pitch: <span id="pitch_elder"></span></div>
             <div>Loudness: <span id="loudness_elder"></span></div>
@@ -57,7 +34,6 @@
             <div>Loudness Filtered: <span id="loudness_elder_filtered"></span></div>
             <div>Stilte t.o.v totaal: <span id="sil_tot_elder"></span></div>
             <div>Stilte percentage: <span id="sil_perc_elder"></span></div>
-            <div id="compare"></div>
         </div>
     </div>
 

@@ -14,5 +14,9 @@ python.exe -m pip install --upgrade pip
 
 
 REM Install requirements using .venv Python executable
-python -m pip install -r requirements.txt
+python.exe -m pip install -r requirements.txt
+
+REM Install Whisper
+python.exe -m pip install git+https://github.com/openai/whisper.git
+python.exe -m spacy download nl_core_news_lg
 )
