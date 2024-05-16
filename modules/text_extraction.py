@@ -6,7 +6,6 @@ import spacy
 import os
 import string
 
-
 os.chdir(os.path.abspath("\\".join(__file__.split("\\")[:-2])))
 print(os.getcwd())
 WORDS_DIR = "wordlists"
@@ -58,7 +57,10 @@ def tag_words(text):
 
 
 def format_text(textlist):
-    text = '<span class="green-highlight">Tussenwerpsels worden in groen aangeduid</span></p></p><span class="yellow-highlight">Verkleinwoorden worden in geel aangeduid</span></p></p><span class="pink-highlight">Collectieve voornaamwoorden worden in roze aangeduid</span></p></p>'
+    text = '</p></p><span class="green-highlight">Tussenwerpsels worden in groen aangeduid</span></p></p><span class="yellow-highlight">Verkleinwoorden worden in geel aangeduid</span></p></p><span class="pink-highlight">Collectieve voornaamwoorden worden in roze aangeduid</span></p></p>'
+    num_VKW = 0
+    num_CVNW = 0
+    num_TSW = 0
     for word, tag in textlist:
         if word in string.punctuation:
             text = text[:-1]  # remove the added space from previous word
@@ -67,10 +69,16 @@ def format_text(textlist):
             text += word + ' '
         elif tag == 'TSW':
             text += f'<span class="green-highlight">{word}</span>' + ' '
+            num_TSW += 1
         elif tag == 'VKW':
             text += f'<span class="yellow-highlight">{word}</span>' + ' '
+            num_VKW += 1
         elif tag == 'CVNW':
             text += f'<span class="pink-highlight">{word}</span>' + ' '
+            num_CVNW += 1
+
+    text = 'Aantal Tussenwerpsels gebruikt: ' + str(num_TSW) + '</p></p>Aantal verkleinwoorden gebruikt: ' + str(
+        num_VKW) + '</p></p>Aantal Collectieve Voornaamwoorden gebruikt: ' + str(num_CVNW) + text
 
     return text
 
