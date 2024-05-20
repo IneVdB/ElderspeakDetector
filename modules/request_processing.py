@@ -15,7 +15,6 @@ from .utilities import (
 from .audio_preprocessing import remove_noise_from_files
 
 
-
 def error_response() -> str:
     """Make the HTML text for the error response"""
     return '<span class="text-muted">Er was een probleem met deze functie. Probeer opnieuw.</span>'
@@ -28,15 +27,21 @@ def generate_filename(speech_type: str = "") -> str:
     return f"{d_1}_{speech_type}.wav" if speech_type else f"{d_1}.wav"
 
 
-def process_elder(elder_file: str, extract_text: bool) -> dict[str, Any]:
+def process_elder(elder_file: str, extract_text: bool, transcription=None) -> dict[str, Any]:
     """Process the request from the elderspeak page"""
     response_data: dict[str, Any] = {
         "pitch": calculate_pitch(elder_file, elderspeak=True, stream=False),
         "loudness": calculate_loudness(elder_file, elderspeak=True),
     }
 
-    if extract_text:
-        text_features = text_extraction.extract_text_features(elder_file)
+    if extract_text & (transcription is not None):
+        text_features = text_extraction.extract_text_features(audio_file=elder_file,
+                                                              transcription=transcription)
+    elif extract_text:
+        text_features = text_extraction.extract_text_features(audio_file=elder_file)
+
+    elif transcription is not None:
+        text_features = text_extraction.extract_text_features(transcription=transcription)
 
     else:
         text_features = {
@@ -61,13 +66,13 @@ def process_audio(request):
 
     extract_text = request.form.get("extract_text") == "true"
 
+    transcript = request.form.get("transcription_file")
 
-    elder_data = process_elder(file_elder, extract_text)
+    elder_data = process_elder(file_elder, extract_text, transcript)
 
     response_data = remove_noise_from_files(file_elder)
 
     elder_data_filtered = process_elder(file_elder, False)
-
 
     response_data["elder"].update(elder_data)
 

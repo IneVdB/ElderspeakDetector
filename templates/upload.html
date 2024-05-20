@@ -13,16 +13,23 @@
             <p id="saved_elder" class="text-primary hidden my-2">De audio is opgeslagen!</p>
             <audio id=recordedAudioElder></audio>
         </div>
+
     </div>
 
     <input type="checkbox" id="extract_text">
     <label for="extract_text">Extract text</label>
+    <div class="col-md-6">
+        <label for="transcript">Transcriptie invoeren (optioneel)</label>
+        <textarea id="transcript" name="transcript" rows="4" cols="50"></textarea>
+    </div>
     <div class="row">
         <a class="btn btn-primary" id="process">Verwerk audio</a>
         <div class="d-flex justify-content-center ">
             <div id="loading" class="spinner-border hidden" role="status"></div>
         </div>
     </div>
+
+
 
     <div class="row">
 

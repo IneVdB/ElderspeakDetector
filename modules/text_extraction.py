@@ -57,7 +57,7 @@ def tag_words(text):
 
 
 def format_text(textlist):
-    text = '</p></p><span class="green-highlight">Tussenwerpsels worden in groen aangeduid</span></p></p><span class="yellow-highlight">Verkleinwoorden worden in geel aangeduid</span></p></p><span class="pink-highlight">Collectieve voornaamwoorden worden in roze aangeduid</span></p></p>'
+    text = '</p><span class="green-highlight">Tussenwerpsels worden in groen aangeduid, </span><span class="yellow-highlight">Verkleinwoorden worden in geel aangeduid, </span><span class="pink-highlight">Collectieve voornaamwoorden worden in roze aangeduid</span></p></p>'
     num_VKW = 0
     num_CVNW = 0
     num_TSW = 0
@@ -77,19 +77,28 @@ def format_text(textlist):
             text += f'<span class="pink-highlight">{word}</span>' + ' '
             num_CVNW += 1
 
-    text = 'Aantal Tussenwerpsels gebruikt: ' + str(num_TSW) + '</p></p>Aantal verkleinwoorden gebruikt: ' + str(
-        num_VKW) + '</p></p>Aantal Collectieve Voornaamwoorden gebruikt: ' + str(num_CVNW) + text
+    # add numbers to front of response
+    text = '</p>Aantal Tussenwerpsels gebruikt: ' + str(num_TSW) + '</p></p>Aantal verkleinwoorden gebruikt: ' + str(
+        num_VKW) + '</p></p>Aantal Collectieve Voornaamwoorden gebruikt: ' + str(num_CVNW) + text + '</p></div>'
 
     return text
 
 
-def extract_text_features(filename: str):
+def extract_text_features(audio_file=None, transcription=None):
     """Extract text features from a given audio file"""
-    total_text = speech_recognition(filename)
     print('extracting features')
-    total_text = tag_words(total_text)
-    total_text = format_text(total_text)
+    total_text = ''
+
+    if transcription is not None:
+        transcript_processed = tag_words(transcription)
+        total_text = total_text + '<div><h5>Ingevulde Transcriptie</h5>' + format_text(transcript_processed)
+
+    if audio_file is not None:
+        tts_text = speech_recognition(audio_file)
+        tts_text = tag_words(tts_text)
+        total_text = total_text + '<div><h5>Speech-To-Text Transcriptie</h5>' + format_text(tts_text)
 
     return {
         "speech_recognition": total_text,
     }
+

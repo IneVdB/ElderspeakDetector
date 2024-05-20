@@ -14,9 +14,9 @@ const btn_process = document.getElementById('process');
 let el_loading = document.getElementById('loading');
 
 //elder elements
-const btn_record_elder = document.getElementById('btn-record-elder');
 const saved_elder = document.getElementById('saved_elder');
 let mp3_elder = document.getElementById('mp3_elder');
+let transcript = document.getElementById('transcript');
 let el_pitch_elder = document.getElementById('pitch_elder');
 let el_loudness_elder = document.getElementById('loudness_elder');
 let el_pitch_elder_filtered = document.getElementById('pitch_elder_filtered');
@@ -49,6 +49,10 @@ function sendData(blob_elder) {
         data_to_send.append('extract_text', false);
     }
 
+    if (transcript.value !== '') {
+        data_to_send.append('transcription_file', transcript.value)
+    }
+
     console.log('Prepared')
     fetch('/receive_audio', {
         method: 'POST',
@@ -66,7 +70,7 @@ function sendData(blob_elder) {
         sil_perc_elder = json['elder']['silence_percentage'];
 
         if (json['elder']['speech_recognition'] !== "Tekst-extractie is uitgeschakeld") {
-            big_content.insertAdjacentHTML("beforeend", `<div><h4>Wat heb je gezegd?</h4><p>${json['elder']['speech_recognition']}</p></div>`);
+            big_content.insertAdjacentHTML("beforeend", `<div><h4>Transcriptie:</h4></div>${json['elder']['speech_recognition']}</div>`);
         }
 
     }).then(_ => {
@@ -114,32 +118,4 @@ btn_process.addEventListener('click', () => {
 
 console.log("PRESENT!!")
 
-//elder
-function start_audio_elder() {
-    audio_chunks_elder = [];
-    mp3_elder.value = "";
-    rec_elder.start();
-    console.log("STARTED RECORDING");
-    btn_record_elder.classList.remove("btn-primary");
-    btn_record_elder.classList.add("btn-warning");
-    btn_record_elder.innerText = "stop elder opname"
-}
 
-function stop_audio_elder() {
-    console.log("STOPPED RECORDING Elder");
-    btn_record_elder.classList.add("btn-primary");
-    btn_record_elder.classList.remove("btn-warning");
-    btn_record_elder.innerText = "elder audio opnemen"
-    rec_elder.stop();
-    saved_elder.classList.remove('hidden');
-
-}
-
-btn_record_elder.addEventListener('click', () => {
-    console.log("CLICKED Elder");
-    if (btn_record_elder.innerText.toLowerCase() === "elder audio opnemen") {
-        start_audio_elder()
-    } else if (btn_record_elder.innerText.toLowerCase() === "stop elder opname") {
-        stop_audio_elder()
-    }
-})
