@@ -5,6 +5,7 @@ import whisper
 import spacy
 import os
 import string
+import assemblyai as aai
 
 os.chdir(os.path.abspath("\\".join(__file__.split("\\")[:-2])))
 print(os.getcwd())
@@ -13,24 +14,22 @@ WORDS_DIR = "wordlists"
 with open(f"{WORDS_DIR}/geen_verkleinwoorden.txt", "r", encoding="utf-8") as f:
     geen_verkleinwoorden = f.read().splitlines()
 
-with open(f"{WORDS_DIR}/nietszeggendewoorden.txt", "r", encoding="utf-8") as f:
-    nietzeggendewoorden = f.read().splitlines()
-
 with open(f"{WORDS_DIR}/tussenwerpsels.txt", "r", encoding="utf-8") as f:
     tussenwerpels_woorden = f.read().splitlines()
 
+with open(f"{WORDS_DIR}/assembly_apikey.txt", "r", encoding="utf-8") as f:
+    aai.settings.api_key = f.readline()
+
+config = aai.TranscriptionConfig(language_code="nl", speaker_labels=True)
 
 def speech_recognition(filename: str):
-    try:
-        print("Transcribing")
-        model = whisper.load_model("small")
-        result = model.transcribe(filename, language="nl")
-        print(result["text"])
-        return result["text"]
-    except Exception as error:
-        error_message = f"Fout bij de spraakherkenning: {error}."
-        print(error_message)
-        return error_message
+    transcriber = aai.Transcriber(config=config)
+    transcript = transcriber.transcribe(filename)
+
+    if transcript.status == aai.TranscriptStatus.error:
+        print(transcript.error)
+    else:
+        return transcript.text
 
 
 def tag_words(text):
