@@ -5,16 +5,14 @@
 
 1. Download het zip-bestand van deze website door bovenaan te klikken op de groene knop 'code' en daarna op 'download zip'.
 2. Pak het zip-bestand uit naar een gewenste locatie.
-3. typ in de windows-zoekbalk 'Windows PowerShell' en kies uitvoeren als Administrator.
-4. Typ in dit venster het commando ```Set-ExecutionPolicy unrestricted``` en druk op Enter.
-5. Het venster kan nu gesloten worden.
 6. Open de map 'Programs' in de uitgepakte zip
 7. Voer zowel python.exe en VC_Redist.exe uit als Administrator en doorloop de installatie van deze programma's.
 
 ## Installatie webapplicatie
 
 1. Dubbelklik op install.bat
-2. Wacht tot het venster sluit.
+2. Indien een beveiligingsvenster opent, klik op meer info en dan onderaan 'toch uitvoeren'
+3. Wacht tot het venster sluit.
 
 ##API key voor Assembly-AI
 De speech-to-text gaat via een externe service waarvoor een soort wachtwoord of API key nodig is.
