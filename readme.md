@@ -3,7 +3,7 @@
 ## Voorbereiding
 
 
-1. Download het zip-bestand van deze website door bovenaan te klikken op de groene knop 'code' en daarna op 'download zip'.
+1. Download het zip-bestand van deze website door bovenaan te klikken op de groene knop 'code' en daarna op 'download zip', of via deze [link](https://github.com/IneVdB/ElderspeakDetector/archive/refs/heads/main.zip).
 2. Pak het zip-bestand uit naar een gewenste locatie.
 6. Open de map 'Programs' in de uitgepakte zip
 7. Voer zowel python.exe en VC_Redist.exe uit als Administrator en doorloop de installatie van deze programma's.
