@@ -1,6 +1,6 @@
 """Text extraction module"""
 
-import whisper
+#import whisper
 
 import spacy
 import os
