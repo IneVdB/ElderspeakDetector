@@ -20,8 +20,8 @@
 De speech-to-text gaat via een externe service waarvoor een soort wachtwoord of API key nodig is.
 Hiervoor moet zelf een account worden aangemaakt gezien deze keys best niet publiek gedeeld worden.
 
-1. Surf naar [https://www.assemblyai.com/dashboard/signup]() en maak een account aan.
-2. Ga nu naar de account-pagina op [https://www.assemblyai.com/app/account]()
+1. Surf naar [https://www.assemblyai.com/dashboard/signup](https://www.assemblyai.com/dashboard/signup) en maak een account aan.
+2. Ga nu naar de account-pagina op [https://www.assemblyai.com/app/account](https://www.assemblyai.com/app/account)
 3. Aan de linkerkant kan de API key worden teruggevonden. Kopieer deze.
 4. Vervang de eerste lijn in het bestand 'assembly_apikey.txt' in de map 'wordlists' met deze code.
 
@@ -30,7 +30,7 @@ In principe zijn de eerste 100 uur aan transcripties per account gratis.
 ## Website starten
 
 1. Dubbelklik op install.bat
-2. Volg de link die tevoorschijn komt, normaalgezien is dit [https://127.0.0.1:5001/]()
+2. Volg de link die tevoorschijn komt, normaalgezien is dit [https://127.0.0.1:5001/](https://127.0.0.1:5001/)
 
 ## Zelf woorden toevoegen
 
