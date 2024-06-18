@@ -14,7 +14,7 @@
 2. Indien een beveiligingsvenster opent, klik op meer info en dan onderaan 'toch uitvoeren'
 3. Wacht tot het venster sluit.
 
-##API key voor Assembly-AI
+## API key voor Assembly-AI
 De speech-to-text gaat via een externe service waarvoor een soort wachtwoord of API key nodig is.
 Hiervoor moet zelf een account worden aangemaakt gezien deze keys best niet publiek gedeeld worden.
 
