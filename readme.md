@@ -2,17 +2,14 @@
 
 ## Voorbereiding
 
-
 1. Download het zip-bestand van deze website door bovenaan te klikken op de groene knop 'code' en daarna op 'download zip', of via deze [link](https://github.com/IneVdB/ElderspeakDetector/archive/refs/heads/main.zip).
 2. Pak het zip-bestand uit naar een gewenste locatie.
-6. Open de map 'Programs' in de uitgepakte zip
-7. Voer zowel python.exe en VC_Redist.exe uit als Administrator en doorloop de installatie van deze programma's.
 
 ## Installatie webapplicatie
 
-1. Klik met de rechtermuisknop op install.bat en kies uitvoeren als administrator.
-2. Indien een beveiligingsvenster opent, klik op meer info en dan onderaan 'toch uitvoeren'
-3. Wacht tot het venster sluit.
+2. Klik met de rechtermuisknop op choco.bat en kies uitvoeren als administrator. Indien een beveiligingsvenster opent, klik op meer info en dan onderaan 'toch uitvoeren'.
+Het venster sluit automatisch.
+3. Dubbelklik op install.bat en wacht tot het venster sluit.
 4. Dubbelklik op makecert.bat en wacht tot het venster sluit. Indien er een pop-up verschijnt, klik op 'Ja'.
 
 ## API key voor Assembly-AI
