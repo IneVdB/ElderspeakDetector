@@ -1,12 +1,12 @@
-navigator.mediaDevices.getUserMedia({ audio: true })
-    .then(stream => { handlerFunction(stream) })
+//navigator.mediaDevices.getUserMedia({ audio: true })
+//    .then(stream => { handlerFunction(stream) })
 
-function handlerFunction(stream) {
-    rec_elder = new MediaRecorder(stream);
-    rec_elder.ondataavailable = e => {
-        audio_chunks_elder.push(e.data);
-    }
-}
+//function handlerFunction(stream) {
+//    rec_elder = new MediaRecorder(stream);
+//    rec_elder.ondataavailable = e => {
+//        audio_chunks_elder.push(e.data);
+//    }
+//}
 
 
 const big_content = document.getElementById('big-content');
