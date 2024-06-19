@@ -22,9 +22,3 @@ REM python.exe -m pip install git+https://github.com/openai/whisper.git
 REM install spacy model
 python.exe -m spacy download nl_core_news_lg
 )
-
-REM install chocolatey and mkcert
-powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin
-choco feature enable -n=allowGlobalConfirmation
-choco feature disable -n allowGlobalConfirmation
-choco install mkcert
