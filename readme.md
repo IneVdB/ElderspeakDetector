@@ -20,7 +20,7 @@ De speech-to-text gaat via een externe service waarvoor een soort wachtwoord of 
 Hiervoor moet zelf een account worden aangemaakt gezien deze keys best niet publiek gedeeld worden.
 
 1. Surf naar [https://www.assemblyai.com/dashboard/signup](https://www.assemblyai.com/dashboard/signup) en maak een account aan.
-2. Ga nu naar de account-pagina op [https://www.assemblyai.com/app/account](https://www.assemblyai.com/app/account)
+2. Ga na inloggen naar de account-pagina op [https://www.assemblyai.com/app/account](https://www.assemblyai.com/app/account)
 3. Aan de linkerkant kan de API key worden teruggevonden. Kopieer deze.
 4. Vervang de eerste lijn in het bestand 'assembly_apikey.txt' in de map 'wordlists' met deze code.
 
