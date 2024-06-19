@@ -42,7 +42,7 @@ def recieve_audio():
 
 if __name__ == "__main__":
     context = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
-    context.load_cert_chain("ssl/cert.pem", "ssl/key.pem")
+    context.load_cert_chain("ssl/localhost.com+5.pem", "ssl/localhost.com+5-key.pem")
     app.run(
         debug=False,
         port=5001,
