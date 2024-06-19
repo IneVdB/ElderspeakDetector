@@ -10,9 +10,10 @@
 
 ## Installatie webapplicatie
 
-1. Dubbelklik op install.bat
+1. Klik met de rechtermuisknop op install.bat en kies uitvoeren als administrator.
 2. Indien een beveiligingsvenster opent, klik op meer info en dan onderaan 'toch uitvoeren'
 3. Wacht tot het venster sluit.
+4. Dubbelklik op makecert.bat en wacht tot het venster sluit. Indien er een pop-up verschijnt, klik op 'Ja'.
 
 ## API key voor Assembly-AI
 De speech-to-text gaat via een externe service waarvoor een soort wachtwoord of API key nodig is.
@@ -27,8 +28,18 @@ In principe zijn de eerste 100 uur aan transcripties per account gratis.
 
 ## Website starten
 
-1. Dubbelklik op install.bat
+1. Dubbelklik op start_website.bat
 2. Volg de link die tevoorschijn komt, normaalgezien is dit [https://127.0.0.1:5001/](https://127.0.0.1:5001/)
+
+## Gebruik website
+
+- Bij 'Choose file' kan een audio- of videobestand worden opgeladen. 
+Hierop gebeurt dan analyse voor audiokenmerken wanneer op de knop 'Verwerk audio' wordt geklikt.
+- Wanneer 'extract text' wordt aangevinkt zal ook een automatische transcriptie gebeuren waarna de resulterende tekst geanalyseerd wordt.
+- Wanneer een transcriptie wordt ingevuld in het tekstveld zal hierop analyse gebeuren.
+- Wanneer beide onaangevuld blijven (geen vinkje en een leeg tekstveld) zal enkel audio-analyse plaatsvinden.
+- Wanneer beide zijn aangevuld zal op beide analyse worden uitgevoerd.
+- Het is noodzakelijk om een audio- of videobestand op te laden ook om enkel een bestaande transcriptie in het tekstveld te analyseren.
 
 ## Zelf woorden toevoegen
 
@@ -39,5 +50,5 @@ Om woorden toe te voegen aan de detectie kunnen ze gewoon op een nieuwe lijn ond
 ## Troubleshooting
 - Wanneer een probleem opduikt bij installatie kan meer info worden teruggevonden worden in het bestand startup.log.
 Indien het probleem zich voortzet kan contact opgenomen worden.
-- Indien er een foutmelding komt over een onveilige verbinding bij het openen van de website, klik op 'geavanceerd' en 'ga verder naar deze pagina'. Dit wil zeggen dat er iets is misgegaan met het certificaat. 
-Omdat de website enkel lokaal draait vormt dit in eerste instantie geen probleem, bij online websites is dit minder veilig.
+- Indien er een foutmelding komt over een onveilige verbinding bij het openen van de website, kan het zijn dat het gemaakte certificaat is verlopen. 
+Dubbelklik nogmaals op makecert.bat om een nieuw certificaat aan te maken.
